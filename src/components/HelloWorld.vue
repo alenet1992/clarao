@@ -1,17 +1,20 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ name }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'This is a fucking teste',
-  props: {
-    msg: String
-  }
-}
-</script>
+  name: 'This is a fucking teste', 
+  
+  data : function(){
+    return {
+      msg:'ola'
+    }
+  } 
+} 
+</script> 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
@@ -20,7 +23,7 @@ h3 {
 }
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0
 }
 li {
   display: inline-block;
