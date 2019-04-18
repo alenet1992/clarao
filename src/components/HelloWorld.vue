@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ name }}</h1>
+    <p>Testing deploy system</p>
   </div>
 </template>
 
