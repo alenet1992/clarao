@@ -1,0 +1,184 @@
+/***************** FONTS *****************/
+$root: "/";
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('#{$root}fonts/Rajdhani/rajdhani-bold-webfont.eot');
+    src: url('#{$root}fonts/Rajdhani/rajdhani-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-bold-webfont.woff2') format('woff2'),
+         url('#{$root}fonts/Rajdhani/rajdhani-bold-webfont.woff') format('woff'),
+         url('#{$root}fonts/Rajdhani/rajdhani-bold-webfont.ttf') format('truetype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-bold-webfont.svg#rajdhanibold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('#{$root}fonts/Rajdhani/rajdhani-light-webfont.eot');
+    src: url('#{$root}fonts/Rajdhani/rajdhani-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-light-webfont.woff2') format('woff2'),
+         url('#{$root}fonts/Rajdhani/rajdhani-light-webfont.woff') format('woff'),
+         url('#{$root}fonts/Rajdhani/rajdhani-light-webfont.ttf') format('truetype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-light-webfont.svg#rajdhani_lightregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('#{$root}fonts/Rajdhani/rajdhani-medium-webfont.eot');
+    src: url('#{$root}fonts/Rajdhani/rajdhani-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-medium-webfont.woff2') format('woff2'),
+         url('#{$root}fonts/Rajdhani/rajdhani-medium-webfont.woff') format('woff'),
+         url('#{$root}fonts/Rajdhani/rajdhani-medium-webfont.ttf') format('truetype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-medium-webfont.svg#rajdhani_mediumregular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('#{$root}fonts/Rajdhani/rajdhani-regular-webfont.eot');
+    src: url('#{$root}fonts/Rajdhani/rajdhani-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-regular-webfont.woff2') format('woff2'),
+         url('#{$root}fonts/Rajdhani/rajdhani-regular-webfont.woff') format('woff'),
+         url('#{$root}fonts/Rajdhani/rajdhani-regular-webfont.ttf') format('truetype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-regular-webfont.svg#rajdhaniregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Rajdhani';
+    src: url('#{$root}fonts/Rajdhani/rajdhani-semibold-webfont.eot');
+    src: url('#{$root}fonts/Rajdhani/rajdhani-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-semibold-webfont.woff2') format('woff2'),
+         url('#{$root}fonts/Rajdhani/rajdhani-semibold-webfont.woff') format('woff'),
+         url('#{$root}fonts/Rajdhani/rajdhani-semibold-webfont.ttf') format('truetype'),
+         url('#{$root}fonts/Rajdhani/rajdhani-semibold-webfont.svg#rajdhani_semiboldregular') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+/***************** GLOBAL *****************/
+html{	
+	font-size: $global-font-size;
+
+	@media screen and (max-width: 950px) {
+		font-size: 9px;
+	}
+	@include breakpoint(xsmall down){
+		font-size: 8px;
+	}
+}
+body, html{
+	height:100%;
+	margin: 0;
+	padding: 0;
+	background-color: #EEE;
+	font-family: $body-font-family;
+	font-weight: normal;
+	line-height: inherit;
+}
+body {    
+	overflow-x: hidden;
+	position:relative;
+	-webkit-font-smoothing: antialiased !important;
+
+	border: 0;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+}
+div, p, a, li, td { 
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+a, input, textarea, button, i, optgroup, select{
+	-webkit-appearance: none !important;
+	font-family: inherit;
+	@include Animationcss(all 0.3s linear);
+}
+
+* {
+	outline: 0;
+	-webkit-appearance: none;
+	text-decoration: none;
+	
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+::selection,
+::-moz-selection {
+	background-color:$secondary-color;
+	color:$white;
+}
+
+ul, li{
+	list-style:none;
+	margin: 0;
+}
+img, svg, picture{
+	display: block;
+	max-width:100%;
+}
+textarea {
+	resize: none;
+}
+
+
+/***************** INPUTS *****************/
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px $white inset  !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+	-webkit-transition-delay: 9999s;
+}
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+input:not(.appearance),
+input:not(.appearance):hover,
+input:not(.appearance):focus{
+	-webkit-appearance: textfield !important;
+	-moz-appearance: textfield !important;
+	appearance: textfield !important;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { opacity:0; color:transparent;}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { opacity:0; color:transparent;} 
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { opacity:0; color:transparent;} 
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {opacity:0; color:transparent;}
+
+input{
+	border-style: none;
+}
+
+/***************** BUTTON *****************/
+button{
+	cursor:pointer;
+}
+
+/***************** GENERAL *****************/
+.w-100{
+	width: 100%!important;
+}
+
+h3{
+	font-weight:600;
+}
