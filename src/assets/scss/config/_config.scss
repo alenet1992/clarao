@@ -1,0 +1,61 @@
+// 1. Variaveis
+// ---------
+$icon-font-name: "ametalurgica";
+$global-font-size: 10px;
+$global-lineheight: inherit;
+
+$global-width: 1400px;
+$global-max-width: 1400px;
+//$global-width: 100%;
+
+$max_width_pag: 81rem;
+
+$globalMedia: 350;
+
+$body-font-family: 'Rajdhani', sans-serif;
+$border-radius: 0px;
+$white: #fff;
+$black: #000;
+$primary-color: #051214;
+$secondary-color: #333;
+$third-color:#303133;
+$light-gray: #E7E7E7;
+$medium-gray: #EBEBEB;
+$dark-gray: #707070;
+$success-color: #00B37C;
+$error-color: #dd0e0e;
+$dark-text:#2B2B2B;
+
+$grid-row-alias: 'row';
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-alias: 'column';
+$grid-column-gutter: 5px;
+
+// 2. Breakpoints
+// --------------
+$breakpoints: (
+  small: 0,
+  xsmall:550px,
+  xxsmall: 750px,
+  medium: 950px,
+  xmedium: 1150px,
+  xxmedium: 1280px,
+  large: 1370px,
+  xlarge: 1580px,
+  xxlarge: 1925px,
+  retin: 2500px,
+  xretin: 3000px,
+);
+$print-breakpoint: medium;
+$breakpoint-classes: (small xsmall xxsmall medium xmedium xxmedium large xlarge xxlarge);
+
+// 3. paddings
+// ---------
+$p_column: 5px;
+$p_small: 20px;
+$p_medium: 25px;
+$p_large: 45px;
+$p_retina: 100px;
+
+

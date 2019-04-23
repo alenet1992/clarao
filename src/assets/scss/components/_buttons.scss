@@ -1,0 +1,58 @@
+ [class^="btn"]{
+    position:relative;
+    overflow:hidden;
+    z-index: 1;
+
+    color: white;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 14rem;
+
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+
+    cursor:pointer;
+
+    @include Animationcss(height 0.4s cubic-bezier(.88,.55,.13,.76));
+    
+    &.invert{
+        background-color: $secondary-color;
+
+        &:before{
+            background-color:$white;                
+        }
+
+        &:hover{
+            color:$primary-color;
+        }
+    }
+
+    &:not(.invert){
+        background-color: $primary-color;
+
+    }
+
+    &:not(.invert):before{
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:0;
+        z-index:-1;
+
+        @include Animationcss(height 0.4s cubic-bezier(.88,.55,.13,.76));
+    }
+
+    &:hover{
+        &:not(.invert):before{
+            height:100%;
+        }
+
+        &.invert{
+            background-color:$white;
+        }
+    }
+}

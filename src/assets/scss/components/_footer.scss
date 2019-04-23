@@ -1,0 +1,15 @@
+.footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    height: 4rem;
+
+    background-color:$secondary-color;
+
+      & .btn-winner:hover{
+        color:$primary-color;
+        background-color:$white;
+
+        @include Animationcss(all 0.3s linear);
+    }
+}

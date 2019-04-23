@@ -1,0 +1,169 @@
+// 1. Mixin´s
+// ---------
+@mixin setPadded($property:padding, $vertHori:1, $vert:0, $hori:1, $value:0){	
+	/* MARGENS HELPER */
+	@if $vertHori == 1{
+		@if $vert == 0{
+			#{$property}-left: $value;
+			#{$property}-right: $value;
+		}
+		
+		@if $hori == 0{
+			#{$property}-top: $value;
+			#{$property}-bottom: $value;
+		}
+	}@else{
+		#{$property}: $value;
+	}
+}
+@mixin padding-sides($isRow:0, $property:padding, $negative:'', $vertHori:1, $vert:0, $hori:1, $important:''){	
+	/* MARGENS LATERAIS */
+	
+	$padd: $p_small;
+	
+	@if $isRow > 0{
+		$padd: $padd - $p_column;
+	}
+
+	$value: #{$negative}$padd #{$important};
+	@include setPadded($property, $vertHori, $vert, $hori, $value);
+	
+	@include breakpoint(medium up){
+		$padd: $p_medium;
+		
+		@if $isRow > 0{
+			$padd: $padd - $p_column;
+		}
+		
+		$value: #{$negative}$padd #{$important};
+		@include setPadded($property, $vertHori, $vert, $hori, $value);
+	}
+	@include breakpoint(xlarge up){
+		$padd: $p_large;
+		
+		@if $isRow > 0{
+			$padd: $padd - $p_column;
+		}
+		
+		$value: #{$negative}$padd #{$important};
+		@include setPadded($property, $vertHori, $vert, $hori, $value);
+	}
+	@include breakpoint(xxlarge up){
+		$padd: $p_retina;
+		
+		@if $isRow > 0{
+			$padd: $padd - $p_column;
+		}		
+		
+		$value: #{$negative}$padd #{$important};
+		@include setPadded($property, $vertHori, $vert, $hori, $value);
+	}	
+}
+
+@mixin Acceleration {
+	/* Force Hardware Acceleration in WebKit */
+	-webkit-transform: translate3d(0, 0, 0) translateZ(1px);
+	-moz-transform: translate3d(0, 0, 0) translateZ(1px);
+	-ms-transform: translate3d(0, 0, 0) translateZ(1px);
+	-o-transform: translate3d(0, 0, 0) translateZ(1px);
+	transform: translate3d(0, 0, 0) translateZ(1px);
+	
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+@mixin Animationcss($animation1, $animation2:null, $animation3:null) {
+	/* ANIMATIONSCSS */
+	@if ($animation3) {
+		-webkit-transition: $animation1, $animation2, $animation3;
+		-ms-transition: $animation1, $animation2, $animation3;
+		-o-transition: $animation1, $animation2, $animation3;
+		-moz-transition: $animation1, $animation2, $animation3;
+		transition: $animation1, $animation2, $animation3;
+    } @else if ($animation2) {
+		-webkit-transition: $animation1, $animation2;
+		-ms-transition: $animation1, $animation2;
+		-o-transition: $animation1, $animation2;
+		-moz-transition: $animation1, $animation2;
+		transition: $animation1, $animation2;
+    } @else if ($animation1) {
+		-webkit-transition: $animation1;
+		-ms-transition: $animation1;
+		-o-transition: $animation1;
+		-moz-transition: $animation1;
+		transition: $animation1;
+    }
+}
+
+
+@mixin pseudoElements{
+	/* PSEUDO ELEMENTS */
+	content:'';
+	display:block;
+	@include Animationcss(all 0.3s linear);
+}
+
+@mixin displayInline($align:''){
+	/* DISPLAY INLINE BLOCK */
+	display:inline-block;
+
+	@if $align != "" {
+		vertical-align: $align;
+	}
+}
+
+@mixin grayscale {
+	/* GRAYSCALE */
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray; /* IE 6-9 */
+}
+
+@mixin transform($transforms) {
+	/* TRANSFORMS */
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin divOutter($margin) {
+	/* DIVS PARA FORA DO ECRA */
+	display:block;
+	width:auto;
+	margin:0 $margin;
+}
+
+@mixin iconFont{
+	/*ICON FONT*/
+	font-family: $icon-font-name !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin positions($position:absolute, $half:false, $important:''){
+	/*Positioning*/
+	position:$position;
+	
+	@if $half==false{
+		top:0 #{$important};
+		left:0 #{$important};
+		width:100%;
+		height:100%;
+	} @else{
+		top:50% #{$important};
+		left:50% #{$important};
+		
+		@include transform(translate(-50%, -50%) #{$important});
+	}
+}
