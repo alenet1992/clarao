@@ -1,4 +1,5 @@
 # clarao
+Basic landing page project for one personal project.
 
 ## Project setup
 ```
@@ -24,6 +25,3 @@ yarn run test
 ```
 yarn run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
